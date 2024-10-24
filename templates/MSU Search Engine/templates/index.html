@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Source Privacy Search Engine</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Multi-Source Privacy Search Engine</h1>
+
+        <form method="POST" action="/">
+            <input type="text" name="query" placeholder="Enter your search query" required>
+            <button type="submit">Search</button>
+        </form>
+
+        {% if results %}
+        <div class="results">
+            <h2>Results:</h2>
+            <ul>
+                {% for result in results %}
+                <li>
+                    <a href="{{ result.link }}" target="_blank">{{ result.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <div class="external-links">
+            <h2>External Sources:</h2>
+            <ul>
+                <li><a href="https://scholar.google.com" target="_blank">Google Scholar</a></li>
+                <li><a href="https://www.researchgate.net" target="_blank">ResearchGate</a></li>
+                <li><a href="https://ieeexplore.ieee.org" target="_blank">IEEE Xplore</a></li>
+                <li><a href="https://dl.acm.org" target="_blank">ACM Digital Library</a></li>
+                <li><a href="https://www.morgan.edu/library" target="_blank">Morgan Library</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

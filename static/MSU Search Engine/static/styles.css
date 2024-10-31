@@ -1,18 +1,17 @@
 /* Body Styling */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    scroll-behavior: smooth; /* Smooth scroll */
+    align-items: flex-start; 
+    min-height: 100vh;  
 }
 
 /* Main Container Styling */
-.container {
+#wrapper {
     max-width: 800px;
     margin: 20px auto;
     padding: 40px;
@@ -23,10 +22,14 @@ body {
 }
 
 /* Header Styling */
+header {
+    margin-bottom: 40px;  
+}
+
 h1 {
     color: #333;
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /* Search Form Styling */
@@ -66,10 +69,6 @@ button {
 
 button:hover {
     background-color: #0056b3;
-}
-
-button:active {
-    background-color: #003d80;
 }
 
 /* Loading Spinner */

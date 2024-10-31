@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multi-Source Privacy Search Engine</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>Multi-Source Privacy Search Engine</h1>
 
-        <form method="POST" action="/">
+        <form method="POST" action="/" onsubmit="showLoader()">
             <input type="text" name="query" placeholder="Enter your search query" required>
             <button type="submit">Search</button>
         </form>
+
+        <!-- Loader will be shown when search is in progress -->
+        <div id="loader" class="loader" style="display: none;"></div>
 
         {% if results %}
         <div class="results">
@@ -27,7 +30,7 @@
             </ul>
         </div>
         {% endif %}
-        
+
         <div class="external-links">
             <h2>External Sources:</h2>
             <ul>
@@ -39,5 +42,13 @@
             </ul>
         </div>
     </div>
+
+    <!-- JavaScript to toggle the loader -->
+    <script>
+        function showLoader() {
+            document.getElementById('loader').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
+

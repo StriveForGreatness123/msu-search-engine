@@ -1,0 +1,70 @@
+Name: Olamilekan Sulaiman
+Course: CS 600
+Module Three Activity
+
+Revised Test Plan
+
+Original Application Tests
+
+1. Check that the /api/v1/books endpoint is available.
+
+2. Check that the /api/v1/version endpoint is available.
+
+3. Confirm that every book record contains a unique ID value.
+
+4. Confirm that there are no missing or null values in the records.
+
+5. Confirm that duplicate book titles do not exist in the database.
+
+
+Added Security Tests
+
+1. Verify that users can still access /api/v1/version without logging in.
+
+Expected Result:
+The endpoint should return HTTP 200 OK.
+
+2. Verify that /api/v1/books cannot be accessed without authentication.
+
+Expected Result:
+The application should return HTTP 401 Unauthorized.
+
+3. Verify that authenticated users can access /api/v1/books.
+
+Expected Result:
+Users with valid credentials should successfully receive the book data.
+
+4. Verify that HTTPS is enabled for the application.
+
+Expected Result:
+The application should run securely on port 8443 using SSL/TLS.
+
+5. Verify that data sent between the client and server is encrypted.
+
+Expected Result:
+Traffic should be protected through the SSL certificate configured in the application.
+
+6. Verify that passwords are securely encoded.
+
+Expected Result:
+Passwords should use BCrypt encoding instead of plain text storage.
+
+7. Verify that incorrect usernames or passwords are denied access.
+
+Expected Result:
+Invalid login attempts should return HTTP 401 Unauthorized.
+
+8. Verify that Spring Security headers are included in responses.
+
+Expected Result:
+Security headers such as Strict-Transport-Security, X-Frame-Options, and X-Content-Type-Options should appear in the response headers.
+
+9. Verify that the API endpoints remain unchanged after the security updates.
+
+Expected Result:
+The application should continue using /api/v1/books and /api/v1/version without modification.
+
+10. Verify that the original functionality of the application still works after adding security.
+
+Expected Result:
+Authorized users should still be able to retrieve the correct rare book data without issues.
